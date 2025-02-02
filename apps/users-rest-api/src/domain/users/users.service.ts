@@ -40,11 +40,13 @@ export class UsersService {
   }
 
   async update(id: string, dto: UserReqDto): Promise<User> {
-    const user = await this.findById(id);
-    user.name = dto.name;
-    user.email = dto.email;
+    let user = await this.findById(id);
 
-    await this.userRepository.update(id, user);
+    if (!user) {
+      throw new NotFoundException(`User with id ${id} not found`);
+    }
+
+    user = await this.userRepository.update(id, dto);
 
     return user;
   }

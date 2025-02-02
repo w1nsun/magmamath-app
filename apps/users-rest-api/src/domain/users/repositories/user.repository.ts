@@ -66,7 +66,7 @@ export class UserRepository {
 
   async findAll(pagination: PaginationDto): Promise<TUsersList> {
     const result = await this.collection
-      .aggregate<{ totalCount: { count: number }[]; paginatedResults: UserDocument[] }>([
+      .aggregate<{ totalCount: { total: number }[]; paginatedResults: UserDocument[] }>([
         {
           $facet: {
             totalCount: [
@@ -84,7 +84,7 @@ export class UserRepository {
       ])
       .toArray();
 
-    const totalCount = result[0]?.totalCount[0]?.count ?? 0;
+    const totalCount = result[0]?.totalCount[0]?.total ?? 0;
     const paginatedResults = result[0].paginatedResults;
 
     return {
