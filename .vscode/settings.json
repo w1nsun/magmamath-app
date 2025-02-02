@@ -1,0 +1,16 @@
+{
+  "eslint.format.enable": true,
+  "eslint.codeActionsOnSave.rules": null,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+  },
+  "prettier.configPath": ".prettierrc",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.tabSize": 2,
+  "typescript.preferences.importModuleSpecifier": "shortest",
+  "javascript.preferences.importModuleSpecifier": "shortest",
+  "workbench.editor.limit.enabled": true
+}

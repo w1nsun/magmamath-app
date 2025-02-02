@@ -1,0 +1,4 @@
+./README.md
+./assets/*
+./node_modules/*
+./dist/*

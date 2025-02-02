@@ -1,0 +1,56 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Users App",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "start:users:debug",
+        "--",
+        "--inspect-brk"
+      ],
+      "autoAttachChildProcesses": true,
+      "restart": true,
+      "sourceMaps": true,
+      "stopOnEntry": false,
+      "console": "integratedTerminal",
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Notifications App",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "start:notifications:debug",
+        "--",
+        "--inspect-brk"
+      ],
+      "autoAttachChildProcesses": true,
+      "restart": true,
+      "sourceMaps": true,
+      "stopOnEntry": false,
+      "console": "integratedTerminal",
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Tests",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "test:e2e",
+        "--",
+        "--inspect-brk"
+      ],
+      "autoAttachChildProcesses": true,
+      "restart": true,
+      "sourceMaps": true,
+      "stopOnEntry": false,
+      "console": "integratedTerminal",
+    }
+  ]
+}

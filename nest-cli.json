@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/users-rest-api/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/users-rest-api/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/users-rest-api",
+  "projects": {
+    "mongodb-native": {
+      "type": "library",
+      "root": "libs/mongodb-native",
+      "entryFile": "index",
+      "sourceRoot": "libs/mongodb-native/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/mongodb-native/tsconfig.lib.json"
+      }
+    },
+    "notifications-consumer": {
+      "type": "application",
+      "root": "apps/notifications-consumer",
+      "entryFile": "main",
+      "sourceRoot": "apps/notifications-consumer/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/notifications-consumer/tsconfig.app.json"
+      }
+    },
+    "shared": {
+      "type": "library",
+      "root": "libs/shared",
+      "entryFile": "index",
+      "sourceRoot": "libs/shared/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/shared/tsconfig.lib.json"
+      }
+    },
+    "users-rest-api": {
+      "type": "application",
+      "root": "apps/users-rest-api",
+      "entryFile": "main",
+      "sourceRoot": "apps/users-rest-api/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/users-rest-api/tsconfig.app.json"
+      }
+    }
+  }
+}
